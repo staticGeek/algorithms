@@ -1,4 +1,4 @@
-// simple linear search algorithm
+// linear search algorithm
 // time complexity: O(n)
 
 #include <iostream>
