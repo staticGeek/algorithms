@@ -1,12 +1,12 @@
 // linear search algorithm
-// time complexity: O(n)
+// Time Complexity: O(n)
 
 #include <iostream>
 #include <vector>
 using namespace std;
 
 // linear search function
-vector<int> linear_search(vector<int> arr, int element)
+vector<int> linearSearch(vector<int> arr, int element)
 {
     int size = arr.size();
     vector<int> index;
@@ -19,7 +19,7 @@ vector<int> linear_search(vector<int> arr, int element)
 }
 
 // Alternative function
-// vector<int> linear_search(vector<int> arr, int element)
+// vector<int> linearSearch(vector<int> arr, int element)
 // {
 //     int size = arr.size();
 //     vector<int> index;
@@ -63,7 +63,7 @@ int main()
 
     vector<int> index;
 
-    index = linear_search(arr, element); // performing the linear search to get the index number of the given element
+    index = linearSearch(arr, element); // performing the linear search to get the index number of the given element
 
 
     // printing the index

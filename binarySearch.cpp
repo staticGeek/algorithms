@@ -1,5 +1,5 @@
 // binary search algorithm
-// time complexity: O(log N)
+// Time Complexity: O(log n) 
 
 #include <iostream>
 #include <vector>
@@ -7,10 +7,8 @@
 using namespace std;
 
 // binary search function
-bool binary_search(vector<int> arr, int element)
-{
-    sort(arr.begin(), arr.end());
-    
+bool binarySearch(vector<int> arr, int element)
+{    
     int left = 0;
     int right = arr.size()-1;
 
@@ -49,10 +47,13 @@ int main()
 
     cout << "\n\nEnter element to search in the array: "; // target element
     cin >> element;
+    
+    // Time Complexity: O(nlog n) 
+    sort(arr.begin(), arr.end()); // Sorting the given array in order to perform binarySearch on it
 
     bool isPresent;
 
-    isPresent = binary_search(arr, element); // true when the element is present in the vector and false otherwise
+    isPresent = binarySearch(arr, element); // true when the element is present in the vector and false otherwise
 
     if(isPresent) cout << "The element is present in the input!!";
     else cout << "The element is not present in the input!!";
