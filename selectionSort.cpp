@@ -1,27 +1,33 @@
-// insertion sort algorithm
+// selection sort algorithm
 // Time Complexity: O(n^2)
 // Space Complexity: O(1)
-// isAdaptive: true // i.e. time complexity O(n) for already sorted array
-// isStable: true // i.e. maintains same element order
+// isAdaptive: false
+// isStable: false
 
 #include <iostream>
 #include <vector>
 using namespace std;
 
-// insertion sort function
-void insertionSort(vector<int> &arr)
+// selection sort function
+void selectionSort(vector<int> &arr)
 {
-    for (int i = 1; i < arr.size(); i++) // for each element starting from index 1
+    for (int i = 0; i < arr.size() - 1; i++)
     {
-        // inserting the element in the right position
-        int element = arr[i];
-        int j = i - 1;
-        while(arr[j]>element && j>=0) 
+        int temp = i, count = 0;
+        for (int j = i + 1; j < arr.size(); j++) // selection of the least element
         {
-            arr[j+1]=arr[j];
-            j--;
+            if (arr[temp] > arr[j])
+            {
+                temp = j;
+                count = 1;
+            }
         }
-        arr[j+1] = element;
+        if (count)
+        {
+            int k = arr[temp];
+            arr[temp] = arr[i];
+            arr[i] = k;
+        }
     }
 }
 
@@ -46,8 +52,8 @@ int main()
         arr.push_back(element);
     }
 
-    // calling insertion sort function
-    insertionSort(arr);
+    // calling selection sort function
+    selectionSort(arr);
 
     // printing the array after sorting
     cout << "\nThe sorted array is : ";
