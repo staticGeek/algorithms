@@ -11,15 +11,16 @@ using namespace std;
 // partitioning function
 int partition(vector<int> &arr, int low, int high)
 {
+    int pivot = low;
     int i = low + 1;
     int j = high;
     do
     {
-        while (arr[i] <= arr[low])
+        while (arr[i] <= arr[pivot])
         {
             i++;
         }
-        while (arr[j] > arr[low])
+        while (arr[j] > arr[pivot])
         {
             j--;
         }
@@ -30,8 +31,8 @@ int partition(vector<int> &arr, int low, int high)
             arr[j] = temp;
         }
     } while (i < j);
-    int temp = arr[low];
-    arr[low] = arr[j];
+    int temp = arr[pivot];
+    arr[pivot] = arr[j];
     arr[j] = temp;
     return j;
 }
@@ -50,8 +51,8 @@ void quickSort(vector<int> &arr, int low, int high)
 int main()
 {
     // making the i/o faster
-    // ios_base::sync_with_stdio(0);
-    // cin.tie(0);
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
 
     vector<int> arr;
     int n;
